@@ -1,0 +1,65 @@
+/* --- RESUME SECTION --- */
+/* الهيدر الموحد لجميع السيكشنز */
+.section-header {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 12px;
+    
+    /* التحكم في الترحيل يمين: زود النسبة دي لو عاوزه يدخل لجوه أكتر */
+    margin-left: 8%; 
+    
+    margin-top: 60px;    /* مسافة فوق العنوان */
+    margin-bottom: 40px; /* مسافة تحت العنوان */
+    
+    /* خط البرمجة */
+    font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.section-header__tag {
+    color: #00d4ff; /* السماوي المضيء */
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.section-header__title {
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: lowercase; /* عشان يبان كأنه اسم "Variable" */
+    letter-spacing: -0.5px;
+}
+
+/* تعديل الموبايل عشان ميهربش يمين زيادة */
+@media (max-width: 768px) {
+    .section-header {
+        margin-left: 20px; /* مسافة ثابتة وبسيطة في الموبايل */
+        gap: 8px;
+    }
+    .section-header__title {
+        font-size: 1.3rem;
+    }
+}
+.resume-section { background-color: #03070c; padding: 80px 0; }
+.resume-centered-container { max-width: 800px; margin: 0 auto; }
+.resume-header { text-align: center; margin-bottom: 60px; }
+.resume-header__title { font-size: 2.5rem; margin-bottom: 10px; }
+.title-underline { width: 60px; height: 4px; background: var(--primary-blue); margin: 15px auto; border-radius: 2px; }
+.resume-header__subtitle { color: var(--text-gray); }
+
+.resume-block { margin-bottom: 60px; }
+.resume-title { color: var(--primary-blue); font-size: 1.6rem; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+
+.timeline { border-left: 2px solid rgba(0, 212, 255, 0.2); margin-left: 10px; padding-left: 30px; position: relative; }
+.timeline-item { position: relative; margin-bottom: 50px; padding: 25px; background: #0a101a; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
+.timeline-item:hover { border-color: var(--primary-blue); transform: translateX(10px); }
+.timeline-dot { position: absolute; left: -41px; top: 30px; width: 20px; height: 20px; background: var(--bg-color); border: 3px solid var(--primary-blue); border-radius: 50%; box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+.item-date { display: inline-block; color: var(--primary-blue); background: rgba(0, 212, 255, 0.1); padding: 4px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin: 10px 0; }
+.item-company { color: var(--text-white); font-weight: 700; margin-bottom: 10px; }
+.item-details li { color: var(--text-gray); margin-bottom: 8px; list-style: none; position: relative; }
+.item-details li::before { content: "▹"; color: var(--primary-blue); position: absolute; left: -20px; }
+
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.cert-card { background: #0a101a; padding: 20px; border-radius: 12px; border-bottom: 3px solid var(--primary-blue); transition: all 0.3s ease; }
+.cert-card:hover { background: rgba(0, 212, 255, 0.05); transform: translateY(-5px); }
+.cert-date { display: block; color: var(--primary-blue); font-size: 0.9rem; margin-bottom: 5px; }

@@ -1,0 +1,158 @@
+/* --- SKILLS SECTION --- */
+#about {
+    overflow: hidden; /* لضمان عدم حدوث scroll جانبي بسبب الـ Glow */
+}
+
+.skills-wrapper-unique {
+    background-color: var(--bg-color);
+    position: relative; 
+    padding: 100px 0;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+}
+
+/* الهيدر الجديد الموحد - نفس استايل البورتفوليو والـ CV */
+/* تعديل الهيدر عشان يجي في النص */
+/* --- SECTION HEADER UPDATED --- */
+.skills-wrapper-unique .section-header {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 12px; /* مسافة أقل بين الـ Tag والعنوان */
+    margin-bottom: 50px;
+    margin-left: 8%; /* المحاذاة الموحدة */
+}
+
+.skills-wrapper-unique .section-header__tag {
+    color: var(--primary-blue);
+    /* تصغير الفونت عشان ميبقاش ضخم */
+    font-size: clamp(18px, 3vw, 24px); 
+    font-weight: 400;
+    /* التأكد من استخدام فونت برمجي صريح */
+    font-family: 'Fira Code', 'Courier New', monospace; 
+    opacity: 0.8;
+}
+
+.skills-wrapper-unique .section-header__title {
+    color: var(--text-white);
+    /* تصغير مقاس العنوان عشان يليق مع الـ Pills */
+    font-size: clamp(24px, 4vw, 36px); 
+    font-weight: 700;
+    text-transform: lowercase;
+    margin: 0;
+    letter-spacing: -0.5px;
+    font-family: var(--font-family); /* يرجع لفونت الموقع الأساسي */
+    line-height: 1;
+}
+
+/* إضافة لمسة احترافية: تنعيم الخط */
+.skills-wrapper-unique .section-header__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* خلفيات التوهج (Magic Glow) */
+.skills-wrapper-unique::before, 
+.skills-wrapper-unique::after { 
+    content: ''; 
+    position: absolute; 
+    width: 350px; 
+    height: 350px; 
+    background: var(--magic-glow); 
+    filter: blur(120px); 
+    border-radius: 50%; 
+    z-index: 1; 
+    pointer-events: none; 
+}
+.skills-wrapper-unique::before { top: -100px; left: -100px; }
+.skills-wrapper-unique::after { bottom: -100px; right: -100px; }
+
+.skills-inner-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    text-align: center; 
+    position: relative; 
+    z-index: 2; 
+    padding: 0 20px;
+}
+
+/* شبكة المهارات */
+.skills-flex-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    list-style: none; 
+    padding: 0; 
+    margin-bottom: 60px; 
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: var(--secondary-navy);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 50px;
+    color: var(--text-white);
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    position: relative;
+    animation: floating-random var(--duration, 6s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes floating-random { 
+    0%, 100% { transform: translate(0, 0) rotate(0deg); } 
+    25% { transform: translate(var(--x-move, 5px), var(--y-move, -10px)) rotate(1deg); } 
+    50% { transform: translate(calc(var(--x-move, 5px) * -1), var(--y-move, -15px)) rotate(-1deg); } 
+    75% { transform: translate(var(--x-move, 5px), var(--y-move, -5px)) rotate(0.5deg); } 
+}
+
+.skill-pill:hover { 
+    border-color: var(--primary-blue); 
+    background: rgba(0, 212, 255, 0.2); 
+    box-shadow: 0 0 30px var(--magic-glow); 
+    transform: scale(1.15) !important; 
+    animation-play-state: paused; 
+    z-index: 100; 
+}
+
+.skill-pill img { 
+    width: 22px; 
+    height: 22px; 
+    object-fit: contain; 
+    filter: drop-shadow(0 0 5px var(--magic-glow)); 
+}
+
+/* منطقة الـ CTA */
+.skills-cta-area p { 
+    color: var(--text-gray); 
+    font-size: 20px; 
+}
+
+.skills-cta-area a { 
+    color: var(--primary-blue); 
+    font-weight: 600; 
+    position: relative; 
+    padding: 0 5px; 
+    text-decoration: none;
+}
+
+.skills-cta-area a::after { 
+    content: ''; 
+    position: absolute; 
+    width: 0; 
+    height: 2px; 
+    bottom: -2px; 
+    left: 0; 
+    background: var(--primary-blue); 
+    transition: 0.3s; 
+    box-shadow: 0 0 10px var(--primary-blue); 
+}
+
+.skills-cta-area a:hover::after { 
+    width: 100%; 
+}

@@ -1,0 +1,20 @@
+/*
+Theme Name: Abanoub Portfolio
+Author: Abanoub Maurice
+Description: A modular WordPress theme.
+Version: 1.0.0
+Text Domain: abanoub-portfolio
+*/
+
+/* --- VARIABLES --- */
+:root {
+    --bg-color: #03070c;
+    --primary-blue: #00d4ff;
+    --magic-glow: rgba(0, 212, 255, 0.4);
+    --secondary-navy: #0d1b2a;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+    --font-family: 'Poppins', sans-serif;
+    --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --header-height: 120px;
+}

@@ -1,0 +1,180 @@
+/* --- CONTACT SECTION --- */
+.contact-wrapper { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: start; padding: 80px 0; }
+
+.section-badge { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+
+/* 1. البادج (من أخضر لـ سماوي) */
+.section-badge .line { width: 30px; height: 2px; background-color: #00d4ff; }
+.section-badge .badge-text { color: #00d4ff; font-size: 0.9rem; font-weight: 500; }
+
+.section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 25px; color: #ffffff; }
+.section-description { color: var(--text-gray); font-size: 1rem; margin-bottom: 40px; max-width: 500px; }
+
+.contact-details { display: flex; flex-wrap: wrap; gap: 30px; }
+.detail-item { display: flex; align-items: center; gap: 15px; }
+
+/* 2. الأيقونات (من أخضر لـ سماوي) */
+.icon-box { 
+    width: 60px; 
+    height: 60px; 
+    background-color: #1a1e23; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #00d4ff; 
+    transition: all 0.4s ease; 
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.detail-item:hover .icon-box { 
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); 
+    transform: scale(1.1); 
+    border-color: #00d4ff;
+}
+
+.detail-text h3 { font-size: 1.2rem; margin-bottom: 5px; color: #ffffff; }
+.detail-text p { color: var(--text-gray); font-size: 0.85rem; }
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+/* 3. حقول الإدخال (البوردر بقى رمادي هادي والفوكس سماوي) */
+.input-group input, .input-group textarea { 
+    width: 100%; 
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px; 
+    padding: 15px 20px; 
+    color: white; 
+    font-family: inherit; 
+    font-size: 1rem; 
+    outline: none; 
+    transition: all 0.4s ease; 
+}
+
+.input-group input:focus, .input-group textarea:focus { 
+    border-color: #00d4ff; 
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2); 
+    background: rgba(0, 212, 255, 0.02);
+}
+
+/* 4. زر الإرسال (من أصفر لـ سماوي بـ Hover أبيض) */
+.submit-btn { 
+    background-color: #00d4ff; 
+    color: #000; 
+    border: none; 
+    padding: 15px 40px; 
+    font-size: 1rem; 
+    font-weight: 700; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    width: fit-content; 
+    transition: all 0.4s ease; 
+}
+
+.submit-btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3); 
+    background-color: #ffffff; 
+}
+
+@media (min-width: 768px) { .form-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .contact-wrapper { grid-template-columns: 1fr 1.2fr; gap: 100px; } }
+
+/* Work Together Section */
+.work-together { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px; }
+.main-heading { font-family: 'Oswald', sans-serif; font-size: clamp(4rem, 15vw, 10rem); color: var(--text-white); line-height: 0.9; text-transform: uppercase; letter-spacing: -2px; }
+.cta-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; background-color: #b8ff4d; border-radius: 50%; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 30px rgba(184, 255, 77, 0.3); }
+.cta-circle:hover { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 50px rgba(184, 255, 77, 0.5); }
+.cta-content { display: flex; flex-direction: column; align-items: center; color: #000; }
+.arrow { font-size: 1.5rem; font-weight: bold; margin-bottom: 5px; }
+.cta-text { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+
+.floating-assets .icon { position: absolute; width: 45px; opacity: 0.4; filter: grayscale(1); transition: all 0.5s ease; z-index: 1; pointer-events: auto; }
+.floating-assets .icon:hover { opacity: 1; filter: grayscale(0); transform: scale(1.2) !important; z-index: 10; }
+.icon-react     { top: 15%; left: 10%; width: 55px; animation: float 6s ease-in-out infinite; }
+.icon-html      { top: 8%;  right: 15%; width: 65px; transform: rotate(15deg); }
+.icon-wp        { bottom: 20%; left: 12%; width: 50px; }
+.icon-figma     { bottom: 15%; right: 18%; width: 45px; }
+
+/* WhatsApp Button */
+.whatsapp-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); z-index: 9999; transition: all 0.4s ease; animation: whatsapp-pulse 2s infinite; }
+.whatsapp-btn:hover { transform: scale(1.1) rotate(10deg); background-color: #20ba5a; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+@keyframes whatsapp-pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+/* Responsive for Floating Icons */
+@media (max-width: 767px) {
+    .floating-assets .icon {
+        display: none; /* إخفاء الأيقونات في الموبايل لمنع الازدحام والـ Overflow */
+    }
+    
+    .work-together {
+        min-height: auto;
+        padding: 80px 20px;
+    }
+    
+    .main-heading {
+        font-size: 2.5rem; /* تصغير النص */
+        text-align: center;
+    }
+    
+    .cta-circle {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        margin-top: 40px;
+    }
+}
+
+/* Scroll Top Button */
+/* --- WhatsApp Floating Button --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366; /* WhatsApp Official Green */
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: var(--transition);
+    /* Animation: Pulse Effect */
+    animation: whatsapp-pulse 2s infinite;
+}
+
+/* Hover Effect */
+.whatsapp-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    background-color: #20ba5a;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+/* Tooltip (Optional) */
+.whatsapp-btn .tooltip {
+    position: absolute;
+    right: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.whatsapp-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 70px;
+}

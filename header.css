@@ -1,0 +1,101 @@
+/* --- HEADER --- */
+.main-header { 
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; 
+    transition: var(--transition); display: flex; align-items: center;
+    height: var(--header-height); padding-top: 50px; padding-bottom: 25px;
+}
+
+.main-header.scrolled {
+    height: 80px; 
+    background: rgba(3, 7, 12, 0.9); 
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    /* Neon Glow: توهج نيون خفيف أسفل الهيدر عند السكرول */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 1px 15px rgba(0, 212, 255, 0.1);
+    padding-top: 70px; padding-bottom: 35px;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo-img { height: 80px; width: 80px; transition: var(--transition); }
+
+/* Navigation Menu */
+.nav-menu { 
+    display: none; list-style: none; gap: 25px; 
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px);
+    padding: 10px 30px; border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1); transition: var(--transition);
+}
+
+.main-header.scrolled .nav-menu {
+    border-color: rgba(0, 212, 255, 0.3); 
+    background: rgba(0, 212, 255, 0.08); 
+    padding: 7px 25px; 
+}
+
+/* Smart Underline Effect */
+.nav-menu li a { 
+    position: relative;
+    font-size: 0.85rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+    transition: var(--transition); 
+    padding-bottom: 5px;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-menu li a:hover::after, 
+.nav-menu li a.active::after { 
+    width: 100%; 
+}
+
+.nav-menu li a:hover, .nav-menu li a.active { color: var(--primary-blue); }
+
+/* Social Links */
+.social-links { display: flex; gap: 18px; align-items: center; }
+.social-icon { 
+    color: var(--text-white); 
+    font-size: 1.2rem; 
+    transition: var(--transition); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.social-icon:hover { 
+    color: var(--primary-blue) !important; 
+    transform: translateY(-3px); 
+    filter: drop-shadow(0 0 8px var(--primary-blue)); 
+}
+
+/* Soft Pulse Animation for WhatsApp */
+@keyframes softPulse {
+    0% { filter: drop-shadow(0 0 0px rgba(0, 212, 255, 0)); }
+    50% { filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 0px rgba(0, 212, 255, 0)); }
+}
+
+.social-icon[aria-label="WhatsApp"] {
+    animation: softPulse 3s infinite ease-in-out;
+}
+
+@media (min-width: 768px) { .nav-menu { display: flex; } }
+
+/* تجهيز العناصر للظهور بالـ GSAP */
+.logo-link, .nav-menu, .social-icon {
+    opacity: 0; /* سيقوم GSAP بإظهارها */
+}
+
+/* تحسين أداء الحركة */
+.main-header, .logo-img, .nav-menu {
+    will-change: transform, opacity, background;
+}

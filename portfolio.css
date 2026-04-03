@@ -1,0 +1,206 @@
+/* --- PORTFOLIO SECTION (Cleaned & Optimized) --- */
+/* --- SECTION HEADER (Coding Monospace Style) --- */
+.section-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    
+    /* التعديل هنا: زود الرقم ده عشان يترحل يمين أكتر */
+    margin-left: 12%; 
+    
+    margin-bottom: 40px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.section-header__tag {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.section-header__title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-transform: lowercase; /* البرمجة غالباً بتبقى lowercase */
+}
+
+/* للموبايل: نصغر الخط شوية */
+@media (max-width: 768px) {
+    .section-header {
+        padding-left: 20px;
+    }
+    .section-header__title {
+        font-size: 1.4rem;
+    }
+}
+
+.project-wrapper { 
+    width: 100%; 
+    padding: 6rem 5%; 
+    overflow: hidden;
+}
+
+.project-container.stack-container {
+    position: relative;
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 0; /* تم التصفير لمنع التضارب مع الأنميشن */
+    padding-bottom: 50vh; 
+}
+
+/* الكارت الأساسي - دمجنا الخصائص هنا */
+.project-card.stack-card { 
+    position: relative;
+    display: flex; 
+    flex-direction: column; /* الموبايل يبدأ كولوم عادي */
+    gap: 2rem; 
+    align-items: center;
+    width: 85%;
+    max-width: 1000px;
+    min-height: 60vh;
+    background: #03070c; 
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 10vh; /* التداخل المطلق */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);    
+    overflow: hidden;
+    margin-bottom: 10vh; /* مسافة طبيعية بين الكروت قبل الحركة */
+    filter: brightness(1);
+    /* مهم جداً عشان الكروت متداريش على بعضها في البداية */
+    will-change: filter, transform, box-shadow;
+}
+
+/* تأكد من كتابة الترتيب ده بدقة في ملف الـ CSS */
+.project-card.stack-card:nth-child(1) { z-index: 1; }
+.project-card.stack-card:nth-child(2) { z-index: 2; }
+.project-card.stack-card:nth-child(3) { z-index: 3; }
+.project-card.stack-card:nth-child(4) { z-index: 4; }
+.project-card.stack-card:nth-child(5) { z-index: 5; }
+.project-card.stack-card:nth-child(6) { z-index: 6; } /* الكارت المشاكس */
+.project-card.stack-card:nth-child(7) { z-index: 7; }
+.project-card.stack-card:nth-child(8) { z-index: 8; }
+.project-card.stack-card:nth-child(9) { z-index: 9; }
+.project-card.stack-card:nth-child(10) { z-index: 10; }
+
+/* محتوى الكارت */
+.project-card__content { flex: 1; width: 100%; }
+.project-card__visual { flex: 1.2; width: 100%; }
+
+.project-card__label { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    color: #00d4ff; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    margin-bottom: 1.5rem; 
+}
+.project-card__label::before { 
+    content: ""; width: 30px; height: 1px; background-color: #00d4ff; 
+}
+
+.project-card__title { 
+    font-family: 'Montserrat', sans-serif; 
+    font-size: clamp(1.8rem, 3vw, 2.5rem); 
+    color: #ffffff; 
+    margin-bottom: 1.2rem; 
+    line-height: 1.1; 
+}
+
+.project-card__description { 
+    color: #a1a1aa; 
+    font-size: 1.05rem; 
+    margin-bottom: 2rem; 
+    max-width: 550px; 
+    line-height: 1.6;
+}
+
+.project-card__link { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 12px; 
+    color: #00d4ff; 
+    font-weight: 600; 
+    transition: all 0.4s ease; 
+}
+.project-card__link:hover { gap: 18px; color: #ffffff; }
+
+.mockup-img { 
+    width: 100%; 
+    max-height: 400px; 
+    object-fit: contain;
+    border-radius: 12px; 
+    transition: transform 0.4s ease;
+}
+
+/* الشاشات الكبيرة */
+@media (min-width: 1024px) { 
+    .project-card.stack-card { 
+        flex-direction: row !important; 
+        gap: 4rem; 
+        padding: 50px;
+    } 
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    .project-card.stack-card {
+        width: 95%;
+        min-height: 50vh;
+        padding: 20px;
+        margin-bottom: -35vh; /* تقليل التداخل شوية في الموبايل عشان المحتوى يبان */
+    }
+}
+/* --- MOBILE FIXES (ONLY) --- */
+@media (max-width: 768px) {
+    
+    /* 1. تظبيط الهيدر عشان يطابق سيكشن الـ Resume والبورتفوليو */
+    .skills-wrapper-unique .section-header,
+    .project-wrapper .section-header {
+        margin-left: 0 !important;
+        padding-left: 20px !important;
+    }
+
+    .section-header__title {
+        font-size: 1.4rem !important;
+    }
+
+    .section-header__tag {
+        font-size: 1.2rem !important;
+    }
+
+    /* 2. حل مشكلة اختفاء الصور وتداخل الكروت */
+    .project-container.stack-container {
+        padding-bottom: 50px !important;
+        gap: 25px !important; /* مسافة واضحة بين الكروت */
+    }
+
+    .project-card.stack-card {
+        width: 92% !important;
+        min-height: auto !important; /* الكارت يفتح مع المحتوى */
+        margin-bottom: 20px !important; /* مسافة موجبة بدل السالبة */
+        padding: 25px !important;
+        transform: none !important; /* إيقاف أي ترحيل يدوي في الموبايل */
+    }
+
+    /* ضمان ترتيب العناصر داخل الكارت */
+    .project-card__visual {
+        margin-top: 20px !important;
+        display: block !important;
+    }
+
+    .mockup-img {
+        max-height: 280px !important; /* حجم مناسب للشاشة */
+        width: 100% !important;
+        object-fit: contain !important;
+    }
+}
